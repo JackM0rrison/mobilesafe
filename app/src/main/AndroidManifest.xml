@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.mobilesafe"
+    android:versionCode="2"
+    android:versionName="1.0">
+
+    <!-- 本地版本号为1，如果服务器上版本为2，有必要提醒用户有新版本可以进行更新 -->
+    <!-- versionName 一般为三位如1.0.0，最后一个0在原有版本修改BUG，第二位为部分功能更新，第一位为大更新 -->
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Activity.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+                <!-- 让App在桌面上有启动图标 -->
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Activity.HomeActivity"
+            android:label="@string/title_activity_home"
+            android:theme="@style/AppTheme"></activity>
+        <provider
+
+            android:name="android.support.v4.content.FileProvider"
+
+            android:authorities="com.example.mobilesafe.fileProvider"
+
+            android:grantUriPermissions="true"
+
+            android:exported="false">
+
+            <meta-data
+
+                android:name="android.support.FILE_PROVIDER_PATHS"
+
+                android:resource="@xml/file_paths"/>
+
+        </provider>
+    </application>
+
+
+</manifest>
