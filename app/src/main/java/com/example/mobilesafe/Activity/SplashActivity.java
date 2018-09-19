@@ -132,7 +132,7 @@ public class SplashActivity extends AppCompatActivity{
     }
     private void downloadAPK() {
         //APK下载地址，放置APK的所在路径
-        //先判断SD卡是否可用
+        //先判断SD卡是否可用hello
         if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
             //2获取SD卡路径
 
